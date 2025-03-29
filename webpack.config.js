@@ -19,6 +19,10 @@ module.exports = {
           "css-loader",
         ],
       },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/i,
+        type: "asset/resource", // Copies the image files to the output directory
+      },
     ],
   },
   plugins: [
