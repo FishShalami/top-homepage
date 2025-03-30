@@ -42,7 +42,12 @@ header {
   top: 90%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(95, 94, 94, 0.6);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(103, 102, 102) 50%,
+    transparent 100%
+  );
   color: rgb(232, 225, 225);
   width: 100%;
   text-align: center;
@@ -81,15 +86,52 @@ header {
 footer {
   background-color: #489cd8;
   height: 50vh;
+  display: flex;
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
-.footer-content {
-  margin: 50px;
+.contact-info {
   display: flex;
+  flex: 1;
+  flex-direction: column;
 }
 
 .social-badges {
   display: flex;
   justify-content: center;
-  gap: ;
+}
+
+.footer-image {
+  flex: 1;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.footer-image > img {
+  max-width: 450px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Media query for smaller viewports */
+@media (max-width: 608px) {
+  footer {
+    flex-direction: column; /* Switch to column layout */
+    align-items: center; /* Center child elements */
+  }
+
+  .contact-info,
+  .footer-image {
+    flex: unset; /* Remove flex-grow to allow natural sizing */
+    width: 100%; /* Make each child take full width */
+    margin-bottom: 20px; /* Add spacing between elements */
+  }
+  .footer-image > img {
+    max-width: 100%; /* Make the image responsive to the container */
+  }
 }
