@@ -2,4 +2,66 @@
 
 * {
   font-family: "Nunito", "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(-10deg, transparent 50%, #489cd8 50%);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.about-card {
+  margin: 30px 0;
+  display: flex;
+  min-width: 250px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: grey;
+  border: black solid 1px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.about-card > .social-badges {
+  align-self: flex-end;
+}
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  /* place-items: center; */
+  justify-content: center;
+}
+
+.card {
+  background-color: #489cd8;
+  border: 2px solid black;
+  min-height: 150px;
+}
+
+footer {
+  background-color: #489cd8;
+  height: 50vh;
+}
+
+.footer-content {
+  margin: 50px;
+  display: flex;
+}
+
+.social-badges {
+  display: flex;
+  justify-content: center;
+  gap: ;
 }
