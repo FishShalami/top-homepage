@@ -43,10 +43,10 @@ header {
 .profile-image > h2 {
   font-family: "Roboto";
   font-size: 2rem;
-  /* position: absolute; */
-  /* top: 50%;
-  left: 50%; */
-  transform: translate(0, -200%);
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
   background: linear-gradient(
     to right,
     transparent 0%,
@@ -60,6 +60,7 @@ header {
 }
 
 .about-card {
+  /* border: 2px solid red; */
   flex: 50%;
   margin: 30px 0;
   display: flex;
