@@ -89,9 +89,47 @@ main {
 }
 
 .card {
-  background-color: #489cd8;
   border: 2px solid black;
   min-height: 150px;
+  display: flex;
+  flex-direction: column;
+}
+
+.proj-img {
+  min-height: 200px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.proj-desc {
+  padding: 0 15px;
+}
+
+.card:nth-child(1) > .proj-img {
+  background-color: #ac2929;
+}
+.card:nth-child(2) > .proj-img {
+  background-color: #067606;
+}
+.card:nth-child(3) > .proj-img {
+  background-color: #4040e8;
+}
+.card:nth-child(4) > .proj-img {
+  background-color: #8e8e1e;
+}
+.card:nth-child(5) > .proj-img {
+  background-color: #177777;
+}
+.card:nth-child(6) > .proj-img {
+  background-color: #691069;
 }
 
 footer {
