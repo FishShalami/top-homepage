@@ -42,7 +42,7 @@ header {
 
 .profile-image > h2 {
   font-family: "Roboto";
-  font-size: 2rem;
+  font-size: 3rem;
   position: absolute;
   bottom: 5px;
   left: 50%;
@@ -70,6 +70,11 @@ header {
   background-color: rgb(243, 243, 243);
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
   padding: 20px;
+  font-size: 1.4rem;
+}
+
+.about-card > h2 {
+  font-size: 2rem;
 }
 
 .about-card > .social-badges {
@@ -78,14 +83,30 @@ header {
 }
 
 main {
-  padding: 50px;
+  padding: 0 50px 50px;
+}
+
+main > h2 {
+  font-size: 2rem;
 }
 
 .cards {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
+  /* grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); */
+  gap: 2.5rem;
   justify-content: center;
+}
+
+@media (min-width: 1001px) {
+  .cards {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 601px) and (max-width: 1000px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 .card {
@@ -93,6 +114,7 @@ main {
   min-height: 150px;
   display: flex;
   flex-direction: column;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .proj-img {
@@ -110,7 +132,7 @@ main {
   padding: 0 15px;
 }
 .proj-desc {
-  padding: 0 15px;
+  padding: 0 15px 40px 15px;
 }
 
 .card:nth-child(1) > .proj-img {
@@ -133,6 +155,7 @@ main {
 }
 
 footer {
+  color: white;
   background-color: #489cd8;
   /* background: linear-gradient(2deg, #489cd8 90%, transparent 50%); */
   /* Shadow layer */
@@ -143,6 +166,8 @@ footer {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: space-between;
   padding: 50px;
+  font-size: 1.4rem;
+  gap: 3rem;
 }
 
 .contact-info {
@@ -150,10 +175,12 @@ footer {
   flex: 1;
   flex-direction: column;
 }
-
+/* .address {
+  line-height: 0.8;
+} */
 .social-badges {
   display: flex;
-  justify-content: center;
+  justify-content: start;
 }
 
 .social-badges > img {
@@ -163,16 +190,15 @@ footer {
 }
 
 .footer-image > img {
-  max-width: 450px;
+  max-width: 800px;
   height: auto;
   object-fit: cover;
 }
 
-/* Media query for smaller viewports */
-@media (max-width: 415px) {
+/* Media query for tablets */
+@media (min-width: 601px) and (max-width: 1000px) {
   footer {
-    flex-direction: column; /* Switch to column layout */
-    align-items: center; /* Center child elements */
+    gap: 2rem;
   }
 
   .contact-info,
@@ -182,6 +208,55 @@ footer {
     margin-bottom: 20px; /* Add spacing between elements */
   }
   .footer-image > img {
-    max-width: 100%; /* Make the image responsive to the container */
+    width: 275px;
+    height: 600px;
+    object-fit: cover;
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  .about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .profile-image > h2 {
+    background: linear-gradient(
+      to right,
+      transparent -10%,
+      rgb(46, 45, 45) 50%,
+      transparent 110%
+    );
+  }
+
+  .about-card > .social-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .contact-info {
+    margin: 20px;
+  }
+  .contact-info > .social-badges {
+    justify-content: center;
+  }
+
+  .footer-image > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translateY(5%);
   }
 }
