@@ -1,0 +1,356 @@
+/*!******************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css ***!
+  \******************************************************************/
+@import url(https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Roboto:ital,wght@0,100;0,300;0,500;0,900;1,100&display=swap);
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/styles.css (1) ***!
+  \**********************************************************************/
+* {
+  font-family: "Nunito", "Roboto", Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background: linear-gradient(-10deg, transparent 50%, #489cd8 50%),
+    /* Shadow layer */
+      linear-gradient(-10deg, transparent 49%, rgba(0, 0, 0, 0.3) 50%);
+}
+
+.header-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.profile-image {
+  flex: 50%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  height: auto;
+}
+
+.profile-image > img {
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+}
+
+.profile-image > h2 {
+  font-family: "Roboto";
+  font-size: 3rem;
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    rgb(103, 102, 102) 50%,
+    transparent 100%
+  );
+  color: rgb(232, 225, 225);
+  width: 100%;
+  text-align: center;
+  pointer-events: none;
+}
+
+.about-card {
+  /* border: 2px solid red; */
+  flex: 50%;
+  margin: 30px 0;
+  display: flex;
+  min-width: 300px;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(243, 243, 243);
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  font-size: 1.4rem;
+}
+
+.about-card > h2 {
+  font-size: 2rem;
+}
+
+.about-card > .social-badges {
+  align-self: flex-end;
+  gap: 30px;
+}
+
+main {
+  padding: 0 50px 50px;
+}
+
+main > h2 {
+  font-size: 2rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  justify-content: center;
+}
+
+.card {
+  border: 2px solid black;
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.proj-img {
+  min-height: 200px;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.proj-details {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+}
+.proj-desc {
+  padding: 0 15px 40px 15px;
+}
+
+.card:nth-child(1) > .proj-img {
+  background-color: #ac2929;
+}
+.card:nth-child(2) > .proj-img {
+  background-color: #067606;
+}
+.card:nth-child(3) > .proj-img {
+  background-color: #4040e8;
+}
+.card:nth-child(4) > .proj-img {
+  background-color: #8e8e1e;
+}
+.card:nth-child(5) > .proj-img {
+  background-color: #177777;
+}
+.card:nth-child(6) > .proj-img {
+  background-color: #691069;
+}
+
+footer {
+  color: white;
+  background-color: #489cd8;
+  /* background: linear-gradient(2deg, #489cd8 90%, transparent 50%); */
+  /* Shadow layer */
+  /* linear-gradient(-10deg, transparent 49%, rgba(0, 0, 0, 0.3) 50%); */
+  border-top: solid 2px black;
+  height: auto;
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  justify-content: space-between;
+  padding: 30px;
+  font-size: 1.4rem;
+  gap: 2.5rem;
+}
+
+.contact-info {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+/* .address {
+  line-height: 0.8;
+} */
+.social-badges {
+  display: flex;
+  justify-content: start;
+}
+
+.social-badges > img {
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
+}
+
+.footer-image > img {
+  max-width: 800px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Media query for tablets */
+@media (min-width: 601px) and (max-width: 1000px) {
+  .header-content {
+    position: relative;
+    display: block;
+    /* padding: 20px; */
+  }
+
+  /* Container for the about-card and profile image */
+  .about-card {
+    position: relative;
+    text-align: right;
+    min-width: 375px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px 20px 150px;
+    min-height: 250px;
+  }
+
+  /* Position the profile image to overlap the about-card */
+  .profile-image {
+    position: absolute;
+    top: 25px;
+    left: 110px;
+    width: 300px;
+    height: 300px;
+    z-index: 2;
+  }
+
+  .profile-image > img {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 2px solid #489cd8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+  }
+
+  .profile-image > h2 {
+    font-size: 1.8rem;
+    bottom: 0;
+    position: absolute;
+    top: -20px;
+    left: 385px;
+    background: none;
+    color: black;
+    width: 200px;
+  }
+
+  .about-card > p {
+    text-align: right;
+    font-size: 1rem;
+    display: block;
+    margin-left: auto; /* Push to right */
+  }
+
+  /* Create space for image initially with a floated element */
+  .about-card::before {
+    content: "";
+    float: left;
+    width: 130px; /* Width of space to reserve */
+    height: 130px; /* Height of space to reserve */
+  }
+
+  .about-card > .social-badges {
+    align-self: flex-end;
+    margin-top: 20px;
+  }
+
+  .footer-image > img {
+    width: 275px;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .proj-img > h2 {
+    text-align: center;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .contact-info,
+  .footer-image {
+    flex: unset; /* Remove flex-grow to allow natural sizing */
+    width: 100%; /* Make each child take full width */
+    margin-bottom: 20px; /* Add spacing between elements */
+  }
+}
+
+/* mobile */
+@media (max-width: 600px) {
+  header {
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: linear-gradient(-10deg, transparent 70%, #489cd8 70%),
+      /* Shadow layer */
+        linear-gradient(-10deg, transparent 69%, rgba(0, 0, 0, 0.3) 70%);
+  }
+
+  .profile-image > img {
+    min-width: 150px;
+    height: 500px;
+    object-fit: cover;
+  }
+
+  .about-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+    box-shadow: none;
+  }
+
+  .profile-image > h2 {
+    background: linear-gradient(
+      to right,
+      transparent -10%,
+      rgb(46, 45, 45) 50%,
+      transparent 110%
+    );
+  }
+
+  .about-card > .social-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .cards {
+    grid-template-columns: repeat(1, 1fr);
+    min-width: 175px;
+  }
+
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    min-width: 250px;
+  }
+
+  footer {
+    border: red solid 2px;
+  }
+  .contact-info {
+    margin: 20px;
+  }
+  .contact-info > .social-badges {
+    justify-content: center;
+  }
+
+  .footer-image > img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    transform: translateY(5%);
+  }
+}
+
