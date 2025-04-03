@@ -153,9 +153,9 @@ footer {
   display: flex;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   justify-content: space-between;
-  padding: 50px;
+  padding: 30px;
   font-size: 1.4rem;
-  gap: 3rem;
+  gap: 2.5rem;
 }
 
 .contact-info {
@@ -186,48 +186,71 @@ footer {
 /* Media query for tablets */
 @media (min-width: 601px) and (max-width: 1000px) {
   .header-content {
-    padding: 50px;
     position: relative;
+    display: block;
+    /* padding: 20px; */
   }
 
+  /* Container for the about-card and profile image */
+  .about-card {
+    position: relative;
+    text-align: right;
+    min-width: 375px;
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+    margin: 20px 20px 20px 150px;
+    min-height: 250px;
+  }
+
+  /* Position the profile image to overlap the about-card */
   .profile-image {
     position: absolute;
-    z-index: 2;
-    top: 20px;
-    left: 20px;
+    top: 25px;
+    left: 110px;
     width: 300px;
     height: 300px;
+    z-index: 2;
   }
 
   .profile-image > img {
     width: 100%;
-    height: auto;
+    height: 100%;
+    aspect-ratio: 1/1;
     object-fit: cover;
-    display: block;
+    border: 2px solid #489cd8;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
   }
 
-  .about-card {
-    margin-left: 340px;
-    z-index: 1;
-    text-align: right;
-    position: relative;
+  .profile-image > h2 {
+    font-size: 1.8rem;
+    bottom: 0;
+    position: absolute;
+    top: -20px;
+    left: 385px;
+    background: none;
+    color: black;
+    width: 200px;
   }
 
   .about-card > p {
-    overflow: visible;
+    text-align: right;
     font-size: 1rem;
+    display: block;
+    margin-left: auto; /* Push to right */
   }
 
-  footer {
-    gap: 2rem;
+  /* Create space for image initially with a floated element */
+  .about-card::before {
+    content: "";
+    float: left;
+    width: 130px; /* Width of space to reserve */
+    height: 130px; /* Height of space to reserve */
   }
 
-  .contact-info,
-  .footer-image {
-    flex: unset; /* Remove flex-grow to allow natural sizing */
-    width: 100%; /* Make each child take full width */
-    margin-bottom: 20px; /* Add spacing between elements */
+  .about-card > .social-badges {
+    align-self: flex-end;
+    margin-top: 20px;
   }
+
   .footer-image > img {
     width: 275px;
     height: 600px;
@@ -241,11 +264,21 @@ footer {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .contact-info,
+  .footer-image {
+    flex: unset; /* Remove flex-grow to allow natural sizing */
+    width: 100%; /* Make each child take full width */
+    margin-bottom: 20px; /* Add spacing between elements */
+  }
 }
 
 /* mobile */
 @media (max-width: 600px) {
   header {
+    margin: 0;
+    padding: 0;
+    min-width: 200px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -255,7 +288,7 @@ footer {
   }
 
   .profile-image > img {
-    width: 200px;
+    min-width: 150px;
     height: 500px;
     object-fit: cover;
   }
@@ -286,6 +319,7 @@ footer {
 
   .cards {
     grid-template-columns: repeat(1, 1fr);
+    min-width: 175px;
   }
 
   footer {
@@ -294,8 +328,12 @@ footer {
     align-items: center;
     margin: 0;
     padding: 0;
+    min-width: 250px;
   }
 
+  footer {
+    border: red solid 2px;
+  }
   .contact-info {
     margin: 20px;
   }
